@@ -1,0 +1,48 @@
+@import "./CssExtras/CssExtras.css";
+
+#phone{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: var(--min-width);
+    min-height: var(--min-height);
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    background: var(--bg-color);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+#phone > #cont{
+    width: 40vw;
+    height: auto;
+  
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#cont > .imgTestimony{
+    width: 100%;
+    height: auto;
+}
+#cont > p{
+    padding:1em;
+}
+  
+#phone > #cont2{
+    width: 70vw;
+    height: auto;
+    text-align: center;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.titleMetadatos{
+    font-size: 2em;
+}

@@ -1,0 +1,14 @@
+#btn{
+    position: absolute;
+    z-index: 100;
+    bottom: 10vh;
+    color:#aa009f;
+    padding: 0.8em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: white;
+}
+#victims{
+    font-size: 1.2em;
+}
+  
