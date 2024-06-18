@@ -298,6 +298,7 @@ async function streamWebcamThroughFaceLandmarker() {
     }
     catch (e) {
         console.error(`Failed to acquire camera feed: ${e}`);
+        window.location.reload();
     }
 }
 

@@ -17,6 +17,7 @@ export default function Testimony(){
     const contNames = document.createElement("div");
     let numIncrement = 0;
     let num = 0;
+    let reload=false;
     //
     metadatos.classList.add("titleMetadatos");
     cont.id="cont";
@@ -60,7 +61,7 @@ export default function Testimony(){
             num++
         }, 200);
 
-        setInterval(() => {
+        let time = setInterval(() => {
             if (numIncrement <= value-10) {
                 numIncrement+=10;
                 credit.textContent="Víctimas actualmente: "+numIncrement;
@@ -71,11 +72,23 @@ export default function Testimony(){
 
                 cont2.appendChild(contDYK);
                 cont2.appendChild(metadatos);
+                reload=true;
             }
-            
+            if (reload) {
+                reload=false;
+                clearInterval(time);
+                setTimeout(() => {
+                    contDYK.remove();
+                    metadatos.remove();
+                    cont2.innerHTML="Reiniciando";
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }, 10000);
+            }
         },1);
     });
- 
+
     cont.appendChild(img);
     cont.appendChild(name);
     cont.appendChild(audio);
