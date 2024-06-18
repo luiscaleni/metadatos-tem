@@ -3,6 +3,7 @@ import { OrbitControls } from "https://cdn.skypack.dev/three@0.150.1/examples/js
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.150.1/examples/jsm/loaders/GLTFLoader";
 import { FilesetResolver, FaceLandmarker } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.1.0-alpha-16";
 import FaceMesh from "./FaceMesh";
+import photo_camera from "/assets/img/photo_camera.svg";
 
 /**
  * Returns the world-space dimensions of the viewport at `depth` units away from
@@ -15,9 +16,11 @@ export default function Memoji(){
     let value = undefined;
     let canvas;
     const phone = document.getElementById("phone");
-    const btn = document.createElement("button")
-    btn.id="btn"
-    btn.textContent="Tomar una foto"
+    const btn = document.createElement("button");
+    const photoCamera = new Image();
+    photoCamera.src=photo_camera;
+    btn.id="btn";
+    btn.appendChild(photoCamera);
     
 
 function getViewportSizeAtDepth(camera, depth) {
@@ -313,7 +316,7 @@ async function run() {
     faceLandmarker = await FaceLandmarker.createFromModelPath(vision, "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task");
     await faceLandmarker.setOptions({
         baseOptions: {
-            delegate: "GPU"
+            delegate: "CPU"
         },
         runningMode: "VIDEO",
         outputFaceBlendshapes: true,

@@ -1,5 +1,5 @@
 import Testimony from "./Testimony";
-import Mesh from "./lib/Mesh";
+import Mesh from "./Mesh";
 
 export default function FaceMesh(){
     const phone = document.getElementById("phone");

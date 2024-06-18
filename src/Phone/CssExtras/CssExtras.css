@@ -1,14 +1,26 @@
 #btn{
     position: absolute;
     z-index: 100;
+    width: 5em;
+    height: 3em;
     bottom: 10vh;
     color:#aa009f;
     padding: 0.8em;
     border: none;
     border-radius: 0.5em;
     background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #victims{
     font-size: 1.2em;
 }
-  
+#btn > img {
+    width: 50%;
+    height: auto;
+}
+#btn:active{
+    background-color: grey;
+}

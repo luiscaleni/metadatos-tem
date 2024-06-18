@@ -30,5 +30,4 @@ const Persons = [
         "audio" : "./assets/audio/Ayelen.mp3"
     }
 ]
-
 export default Persons; 

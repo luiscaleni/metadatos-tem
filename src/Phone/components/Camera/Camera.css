@@ -1,0 +1,46 @@
+#video{
+    position: absolute;
+    z-index: 0;
+    width: auto;
+    height: 100vh;
+    background-color: black;
+    transition: all ease-in-out 1s;
+
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+
+    display: none;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+#canvasMemoji{
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 100%;
+    pointer-events: none;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+
+    display: none;
+}
+#output_canvas{
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 100%;
+    pointer-events: none;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+#irisScan{
+    position: absolute;
+    bottom: 8em;
+    color: #30FF30;
+    font-weight: bold;
+}

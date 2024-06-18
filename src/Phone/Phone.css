@@ -46,3 +46,29 @@
 .titleMetadatos{
     font-size: 2em;
 }
+#phone > #contScanLoad{
+    position: absolute;
+    bottom: 10vh;
+    z-index: 50;
+    width: 10em;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#phone > #contScanLoad > .loadGif{
+    width: 4em;
+    height: 4em;
+}
+#contNames{
+    width: 70vw;
+    height: 80vh;
+    overflow-y: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}

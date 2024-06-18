@@ -1,22 +1,24 @@
 import Persons from "./Persons";
+import argentinaNames from "./ArgentinaNames";
 
 export default function Testimony(){
     const phone = document.getElementById("phone");
     const cont = document.createElement("div");
     const img = new Image();
     const audio = document.createElement("audio");
-    const name = document.createElement("p")
+    const name = document.createElement("p");
     let number = Math.round(Math.random() * (6 - 1) + 1);
-    let value = 5000;
+    let value = 50000;
     //
     const cont2 = document.createElement("div");
     const contDYK = document.createElement("h3");
     const metadatos = document.createElement("p");
     const credit = document.createElement("p");
-    let numAleatorio = 0;
+    const contNames = document.createElement("div");
+    let numIncrement = 0;
+    let num = 0;
     //
     metadatos.classList.add("titleMetadatos");
-    credit.id="victims";
     cont.id="cont";
     img.src = Persons[number]["imagen"];
     img.classList.add("imgTestimony");
@@ -26,6 +28,9 @@ export default function Testimony(){
     audio.load();
     
     cont2.id="cont2";
+    credit.id="victims";
+    contNames.id="contNames";
+
     contDYK.textContent="¿Sabés lo que hacen con tus datos?";
     metadatos.textContent="#Metadatos";
 
@@ -41,15 +46,34 @@ export default function Testimony(){
     audio.addEventListener("ended",()=>{
         cont.remove();
         cont2.appendChild(credit);
-        cont2.appendChild(contDYK);
-        cont2.appendChild(metadatos);
+        
         phone.appendChild(cont2);
+        phone.appendChild(contNames);
 
         setInterval(() => {
-            if (numAleatorio <= value) {
-                credit.textContent="Cantidad de víctimas actualmente: "+numAleatorio++;
+            if (num <= 141) {
+                const element = argentinaNames[num];
+                let p = document.createElement("p");
+                p.textContent=element;
+                contNames.appendChild(p);
             }
-        }, 1);
+            num++
+        }, 200);
+
+        setInterval(() => {
+            if (numIncrement <= value-10) {
+                numIncrement+=10;
+                credit.textContent="Víctimas actualmente: "+numIncrement;
+            }
+            if (numIncrement==50000) {
+                credit.remove();
+                contNames.remove();
+
+                cont2.appendChild(contDYK);
+                cont2.appendChild(metadatos);
+            }
+            
+        },1);
     });
  
     cont.appendChild(img);
