@@ -8,7 +8,7 @@ export default function Testimony(){
     const audio = document.createElement("audio");
     const name = document.createElement("p");
     let number = Math.round(Math.random() * (6 - 1) + 1);
-    let value = 50000;
+    let value = 500000;
     //
     const cont2 = document.createElement("div");
     const contDYK = document.createElement("h3");
@@ -62,11 +62,11 @@ export default function Testimony(){
         }, 200);
 
         let time = setInterval(() => {
-            if (numIncrement <= value-10) {
-                numIncrement+=10;
+            if (numIncrement <= value-100) {
+                numIncrement+=100;
                 credit.textContent="Víctimas actualmente: "+numIncrement;
             }
-            if (numIncrement==50000) {
+            if (numIncrement==500000) {
                 credit.remove();
                 contNames.remove();
 
