@@ -1,4 +1,4 @@
-import vision from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
+import vision from "./@mediapipe/tasks-vision@0.10.3";
 import load from "/assets/img/load.gif";
 
 export default function Mesh(){
@@ -80,11 +80,9 @@ function enableCam(event) {
 
     if (webcamRunning === true) {
         webcamRunning = false;
-        //enableWebcamButton.innerText = "ENABLE PREDICTIONS";
     }
     else {
         webcamRunning = true;
-        //enableWebcamButton.innerText = "";
     }
     // getUsermedia parameters.
     const constraints = {
