@@ -33,8 +33,8 @@
     padding:1em;
 }
   
-#phone > #cont2{
-    width: 70vw;
+#phone > #contArgPersons{
+    width: 85vw;
     height: auto;
     text-align: center;
   
@@ -48,7 +48,7 @@
 }
 #phone > #contScanLoad{
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     z-index: 50;
     width: 10em;
     height: auto;
@@ -56,11 +56,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+#phone > #contScanLoad > #irisScan{
+    color: #30FF30;
+    font-weight: bold;
 }
 #phone > #contScanLoad > .loadGif{
     width: 4em;
-    height: 4em;
+    height: auto;
 }
 #contNames{
     width: 70vw;

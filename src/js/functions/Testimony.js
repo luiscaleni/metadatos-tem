@@ -10,7 +10,7 @@ export default function Testimony(){
     let number = Math.round(Math.random() * (6 - 1) + 1);
     let value = 500000;
     //
-    const cont2 = document.createElement("div");
+    const contArgPersons = document.createElement("div");
     const contDYK = document.createElement("h3");
     const metadatos = document.createElement("p");
     const credit = document.createElement("p");
@@ -28,8 +28,8 @@ export default function Testimony(){
     audio.controls="true";
     audio.load();
     
-    cont2.id="cont2";
-    credit.id="victims";
+    contArgPersons.id="contArgPersons";
+    credit.id="argPersons";
     contNames.id="contNames";
 
     contDYK.textContent="¿Sabés lo que hacen con tus datos?";
@@ -46,9 +46,9 @@ export default function Testimony(){
  
     audio.addEventListener("ended",()=>{
         cont.remove();
-        cont2.appendChild(credit);
+        contArgPersons.appendChild(credit);
         
-        phone.appendChild(cont2);
+        phone.appendChild(contArgPersons);
         phone.appendChild(contNames);
 
         setInterval(() => {
@@ -64,14 +64,14 @@ export default function Testimony(){
         let time = setInterval(() => {
             if (numIncrement <= value-100) {
                 numIncrement+=100;
-                credit.textContent="Víctimas actualmente: "+numIncrement;
+                credit.textContent="Todas estas personas se escanearon el iris en Argentina: "+numIncrement;
             }
             if (numIncrement==500000) {
                 credit.remove();
                 contNames.remove();
 
-                cont2.appendChild(contDYK);
-                cont2.appendChild(metadatos);
+                contArgPersons.appendChild(contDYK);
+                contArgPersons.appendChild(metadatos);
                 reload=true;
             }
             if (reload) {
@@ -80,7 +80,7 @@ export default function Testimony(){
                 setTimeout(() => {
                     contDYK.remove();
                     metadatos.remove();
-                    cont2.innerHTML="Reiniciando";
+                    contArgPersons.innerHTML="Reiniciando";
                     setTimeout(() => {
                         window.location.reload();
                     }, 2000);

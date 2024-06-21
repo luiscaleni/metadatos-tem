@@ -7,10 +7,9 @@ let faceLandmarker;
 let runningMode = "VIDEO";
 let enableWebcamButton;
 let webcamRunning = false;
-const videoWidth = 480;
+const videoWidth = 560;
 const irisLoad = new Image();
 const contScanLoad = document.createElement("div");
-
 
 const textScanIris = document.createElement("p");
 const phone = document.getElementById("phone");
@@ -94,6 +93,7 @@ function enableCam(event) {
         video.addEventListener("loadeddata", predictWebcam);
     });
 }
+
 let lastVideoTime = -1;
 let results = undefined;
 const drawingUtils = new DrawingUtils(canvasCtx);
